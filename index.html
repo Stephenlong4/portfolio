@@ -6,7 +6,7 @@
 
   <title>Stephen Long | Mechanical Engineering Portfolio | CAD, CFD, SolidWorks</title>
   <meta name="title" content="Stephen Long | Mechanical Engineering Portfolio | CAD, FEA, SolidWorks" />
-  <meta name="description" content="Mechanical Engineering portfolio showcasing CAD designs, FEA simulations, SolidWorks projects, ANSYS analysis, Arduino robotics, and engineering certifications." />
+  <meta name="description" content="Mechanical engineering portfolio featuring product design, CAD modeling, FEA and CFD workflows, thermal analysis, robotics, and engineering projects." />
   <meta name="keywords" content="Stephen Long, mechanical engineer, CAD design, SolidWorks, ANSYS, FEA, mechanical engineering portfolio, Arduino projects" />
   <meta name="author" content="Stephen Long" />
   <meta name="robots" content="index, follow" />
@@ -16,12 +16,12 @@
   <meta property="og:type" content="website" />
 
   <meta property="og:title" content="Stephen Long | Mechanical Engineering Portfolio" />
-  <meta property="og:description" content="Mechanical Engineering portfolio – CAD, FEA, SolidWorks, ANSYS, Arduino projects. Open to internships!" />
+  <meta property="og:description" content="Mechanical engineering portfolio featuring CAD, FEA, CFD, thermal analysis, and robotics projects." />
 
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Stephen Long | Mechanical Engineering Portfolio" />
-  <meta name="twitter:description" content="Mechanical Engineering portfolio – CAD, FEA, SolidWorks, ANSYS, Arduino projects." />
+  <meta name="twitter:description" content="Mechanical engineering portfolio featuring CAD, FEA, CFD, thermal analysis, and robotics projects." />
 
 
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
@@ -40,29 +40,27 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Stephen Long",
-    "givenName": "Stephen Long",
-    "familyName": "Stephen Long Jr",
-
-    "description": "Mechanical Engineer specializing in CAD design, FEA simulation, and robotics.",
+    "description": "Mechanical engineer focused on mechanical design, CAD modeling, engineering simulation, and robotics.",
     "email": "stephenlongjr4@gmail.com",
     "jobTitle": "Mechanical Engineer",
-    <!-- "alumniOf": { "@type": "CollegeOrUniversity", "name": "Aditya University" }, -->
-    "knowsAbout": ["CAD Design", "SolidWorks", "ANSYS", "FEA", "Arduino", "Mechanical Engineering", "3D Modeling"],
+    "knowsAbout": [
+      "Mechanical Engineering",
+      "SolidWorks",
+      "AutoCAD",
+      "CATIA",
+      "Creo",
+      "ANSYS",
+      "Finite Element Analysis",
+      "Computational Fluid Dynamics",
+      "Thermal Analysis",
+      "Robotics",
+      "PCB Design",
+      "IoT Design"
     ]
   }
   </script>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      { "@type": "Question", "name": "What CAD software does Stephen Long use?", "acceptedAnswer": { "@type": "Answer", "text": "SolidWorks (90%), AutoCAD (80%), CATIA V5 (65%), and ANSYS Workbench for FEA/CFD simulations." } },
-      { "@type": "Question", "name": "What engineering projects has Stephen Long completed?", "acceptedAnswer": { "@type": "Answer", "text": "15+ projects including Single Cylinder Engine Design, Shock Absorber Assembly, Robot Design & Prototyping, Jeep Design, Crusher Machine, Wheel Loader, and Arduino Engineering Projects." } },
-      { "@type": "Question", "name": "Is Stephen Long available for internships?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! Stephen Long is a B.Tech Mechanical Engineer seeking opportunities in CAD design, simulation, and robotics." } }
-    ]
-  }
-  </script>
+  
 
   <script>
     tailwind.config = {
@@ -274,6 +272,122 @@
       margin-left: auto;
       margin-right: auto;
     }
+    #mDesc {
+    white-space: pre-line;
+    line-height: 1.9;
+    word-break: normal;
+    overflow-wrap: break-word;
+    max-width: 100%;
+}
+.project-gallery {
+    position: relative;
+    padding: 20px;
+    background: var(--bg-root);
+    text-align: center;
+}
+
+.project-gallery #mImage {
+    width: 100%;
+    height: 430px;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    margin: 0 auto;
+}
+
+#galleryThumbs {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    overflow-x: auto;
+    margin-top: 15px;
+    padding: 4px 2px 8px;
+}
+
+.gallery-thumb {
+    flex: 0 0 85px;
+    width: 85px;
+    height: 60px;
+    padding: 0;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0.65;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    background: var(--bg-surface);
+}
+.gallery-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.gallery-thumb.active {
+    opacity: 1;
+    border-color: var(--accent);
+}
+
+#galleryCounter {
+    color: var(--text-secondary);
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+#galleryPrev,
+#galleryNext {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid var(--border-default);
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.92);
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
+}
+#galleryPrev { left: 14px; }
+#galleryNext { right: 14px; }
+#galleryPrev:hover,
+#galleryNext:hover {
+    background: var(--accent);
+    color: #ffffff;
+}
+#galleryPrev:focus-visible,
+#galleryNext:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+@media (max-width: 640px) {
+    .project-gallery { padding: 12px; }
+    .project-gallery #mImage { height: 260px; }
+    #galleryPrev { left: 6px; }
+    #galleryNext { right: 6px; }
+    #galleryPrev, #galleryNext { width: 36px; height: 36px; font-size: 16px; }
+}
+/* Allow the popup to scroll vertically */
+#pmodal {
+    overflow-y: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Keep the popup within the screen height */
+#pmodal > div {
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+/* Make long descriptions readable */
+#modalDescription {
+    white-space: pre-line;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
   </style>
 </head>
 
@@ -295,8 +409,7 @@
           <li><a href="#about" class="nav-link px-3 py-1.5 rounded-md text-sm font-medium transition-all" style="color:var(--text-secondary);">About</a></li>
           <li><a href="#skills" class="nav-link px-3 py-1.5 rounded-md text-sm font-medium transition-all" style="color:var(--text-secondary);">Skills</a></li>
           <li><a href="#projects" class="nav-link px-3 py-1.5 rounded-md text-sm font-medium transition-all" style="color:var(--text-secondary);">Projects</a></li>
-          <!-- <li><a href="#certs" class="nav-link px-3 py-1.5 rounded-md text-sm font-medium transition-all" style="color:var(--text-secondary);">Certs</a></li> -->
-          <li><a href="#timeline" class="nav-link px-3 py-1.5 rounded-md text-sm font-medium transition-all" style="color:var(--text-secondary);">Journey</a></li>
+          <li><a href="#certs" class="nav-link px-3 py-1.5 rounded-md text-sm font-medium transition-all" style="color:var(--text-secondary);">Certifications</a></li>
           <li><a href="#resume" class="nav-link px-3 py-1.5 rounded-md text-sm font-medium transition-all" style="color:var(--text-secondary);">Resume</a></li>
           <li><a href="#contact" class="nav-link px-3 py-1.5 rounded-md text-sm font-medium transition-all" style="color:var(--text-secondary);">Contact</a></li>
         </ul>
@@ -315,8 +428,7 @@
         <a href="#about" class="nav-link block px-4 py-2.5 rounded-md text-sm font-medium transition-all" style="color:var(--text-secondary);">About</a>
         <a href="#skills" class="nav-link block px-4 py-2.5 rounded-md text-sm font-medium transition-all" style="color:var(--text-secondary);">Skills</a>
         <a href="#projects" class="nav-link block px-4 py-2.5 rounded-md text-sm font-medium transition-all" style="color:var(--text-secondary);">Projects</a>
-        <!-- <a href="#certs" class="nav-link block px-4 py-2.5 rounded-md text-sm font-medium transition-all" style="color:var(--text-secondary);">Certifications</a> -->
-        <a href="#timeline" class="nav-link block px-4 py-2.5 rounded-md text-sm font-medium transition-all" style="color:var(--text-secondary);">Journey</a>
+        <a href="#certs" class="nav-link block px-4 py-2.5 rounded-md text-sm font-medium transition-all" style="color:var(--text-secondary);">Certifications</a>
         <a href="#resume" class="nav-link block px-4 py-2.5 rounded-md text-sm font-medium transition-all" style="color:var(--text-secondary);">Resume</a>
         <a href="#contact" class="nav-link block px-4 py-2.5 rounded-md text-sm font-medium transition-all" style="color:var(--text-secondary);">Contact</a>
       </div>
@@ -330,12 +442,12 @@
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-16 lg:py-24">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div class="order-2 lg:order-1">
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6" style="border-color:var(--border-hover);background:var(--accent2-subtle);"><span class="pulse-dot"></span><span class="font-mono text-xs tracking-wider" style="color:var(--accent2-light);">Available for Projects</span></div>
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6" style="border-color:var(--border-hover);background:var(--accent2-subtle);"><span class="pulse-dot"></span><span class="font-mono text-xs tracking-wider" style="color:var(--accent2-light);">Open to Remote Engineering Opportunities</span></div>
           <h1 class="font-display leading-none mb-4"><span class="block text-[clamp(3.5rem,9vw,7.5rem)] tracking-wider" style="color:var(--text-heading);">Stephen Long </span><span class="block text-[clamp(3.5rem,9vw,7.5rem)] tracking-wider" style="color:var(--accent);"></span></h1>
-          <div class="flex items-center gap-3 mb-5"><div class="w-1 h-6 rounded-full flex-shrink-0" style="background:var(--accent);"></div><span class="font-mono text-sm tracking-widest uppercase" style="color:var(--text-secondary);">Mechanical Engineer</span></div>
-          <p class="text-base sm:text-lg leading-relaxed mb-8 max-w-xl" style="color:var(--text-secondary);">Passionate about <span class="font-semibold" style="color:var(--accent-light);">CAD Design</span>, <span class="font-semibold" style="color:var(--accent-light);">Product Development</span>, <span class="font-semibold" style="color:var(--accent-light);">Simulation</span>, and Engineering Innovation.</p>
+          <div class="flex items-center gap-3 mb-5"><div class="w-1 h-6 rounded-full flex-shrink-0" style="background:var(--accent);"></div><span class="font-mono text-sm tracking-widest uppercase" style="color:var(--text-secondary);">Mechanical Engineer · CAD / FEA / CFD</span></div>
+          <p class="text-base sm:text-lg leading-relaxed mb-8 max-w-xl" style="color:var(--text-secondary);">I develop mechanical designs and evaluate their performance through <span class="font-semibold" style="color:var(--accent-light);">CAD modeling</span>, <span class="font-semibold" style="color:var(--accent-light);">FEA / CFD simulation</span>, and <span class="font-semibold" style="color:var(--accent-light);">thermal analysis</span>—with additional experience in robotics, PCB, and IoT design.</p>
           <div class="flex flex-wrap gap-4 mb-8"><a href="#projects" class="btn-primary"><i class="fas fa-compass-drafting" aria-hidden="true"></i> View Projects</a><a href="#resume" class="btn-outline"><i class="fas fa-file-arrow-down" aria-hidden="true"></i> Download Resume</a></div>
-          <div class="flex flex-wrap gap-3"><div class="flex items-center gap-2 px-4 py-2 rounded-full border text-sm" style="background:var(--bg-surface);border-color:var(--border-default);color:var(--text-secondary);"><span class="font-bold" style="color:var(--accent-light);">15+</span> Projects</div><div class="flex items-center gap-2 px-4 py-2 rounded-full border text-sm" style="background:var(--bg-surface);border-color:var(--border-default);color:var(--text-secondary);"><span class="font-bold" style="color:var(--accent-light);">500+</span> CAD Hours</div><div class="flex items-center gap-2 px-4 py-2 rounded-full border text-sm" style="background:var(--bg-surface);border-color:var(--border-default);color:var(--text-secondary);"><span class="font-bold" style="color:var(--accent-light);">22+</span> Certifications</div></div>
+          <div class="flex flex-wrap gap-3"><div class="flex items-center gap-2 px-4 py-2 rounded-full border text-sm" style="background:var(--bg-surface);border-color:var(--border-default);color:var(--text-secondary);"><span class="font-bold" style="color:var(--accent-light);">8</span> Featured Projects</div><div class="flex items-center gap-2 px-4 py-2 rounded-full border text-sm" style="background:var(--bg-surface);border-color:var(--border-default);color:var(--text-secondary);"><span class="font-bold" style="color:var(--accent-light);">FEA</span> Structural Analysis</div><div class="flex items-center gap-2 px-4 py-2 rounded-full border text-sm" style="background:var(--bg-surface);border-color:var(--border-default);color:var(--text-secondary);"><span class="font-bold" style="color:var(--accent-light);">CFD</span> Flow & Thermal Analysis</div></div>
         </div>
         <div class="order-1 lg:order-2 flex justify-center lg:justify-end relative">
           <div class="hidden sm:block absolute inset-0 pointer-events-none">
@@ -344,8 +456,20 @@
             <span class="fl3 absolute bottom-1/3 -left-4 xl:-left-10 flex items-center gap-2 px-3 py-1.5 rounded-full border text-xs font-semibold whitespace-nowrap z-10" style="background:var(--bg-surface);border-color:var(--border-default);color:var(--text-body);"><i class="fas fa-microchip" style="color:var(--accent);" aria-hidden="true"></i> Arduino</span>
             <span class="fl4 absolute -bottom-4 -left-2 xl:-left-6 flex items-center gap-2 px-3 py-1.5 rounded-full border text-xs font-semibold whitespace-nowrap z-10" style="background:var(--bg-surface);border-color:var(--border-default);color:var(--text-body);"><i class="fas fa-chart-line" style="color:var(--accent);" aria-hidden="true"></i> MATLAB</span>
           </div>
-          <div class="relative w-64 h-72 sm:w-80 sm:h-96 lg:w-[340px] lg:h-[400px]">
-            
+          <div class="relative w-64 h-72 sm:w-80 sm:h-96 lg:w-[340px] lg:h-[400px]" role="img" aria-label="Engineering design graphic representing CAD, simulation, and product development">
+            <div class="absolute inset-5 rounded-[2rem] border" style="border-color:var(--border-hover);background:linear-gradient(145deg,var(--bg-surface),var(--bg-secondary));box-shadow:var(--shadow-glow);"></div>
+            <div class="absolute inset-10 rounded-full border" style="border-color:var(--accent);opacity:.22;"></div>
+            <div class="absolute inset-[4.25rem] rounded-full border border-dashed" style="border-color:var(--accent2);opacity:.4;"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="relative flex flex-col items-center justify-center w-44 h-44 sm:w-52 sm:h-52 rounded-3xl border rotate-[-6deg]" style="border-color:var(--border-hover);background:var(--bg-primary);box-shadow:0 20px 60px rgba(0,0,0,.28);">
+                <i class="fas fa-gears text-6xl sm:text-7xl mb-4" style="color:var(--accent);" aria-hidden="true"></i>
+                <span class="font-mono text-xs tracking-[.22em]" style="color:var(--text-heading);">DESIGN · ANALYZE</span>
+                <span class="font-mono text-[10px] tracking-[.3em] mt-2" style="color:var(--text-muted);">ENGINEERING</span>
+              </div>
+            </div>
+            <div class="absolute bottom-7 left-1 sm:left-0 px-3 py-2 rounded-xl border text-xs font-mono" style="background:var(--bg-surface);border-color:var(--border-default);color:var(--accent-light);">CAD / CAE</div>
+            <div class="absolute top-8 right-1 sm:right-0 px-3 py-2 rounded-xl border text-xs font-mono" style="background:var(--bg-surface);border-color:var(--border-default);color:var(--accent2-light);">FEA · CFD</div>
+            <div class="absolute bottom-12 right-0 px-3 py-2 rounded-xl border text-xs font-mono" style="background:var(--bg-surface);border-color:var(--border-default);color:var(--text-secondary);">THERMAL</div>
           </div>
         </div>
       </div>
@@ -412,9 +536,15 @@
 
         <div class="pcard reveal card-base overflow-hidden group" data-c="solidworks ansys assembly" style="padding:0;">
           <div class="relative h-44 overflow-hidden">
-            <img src="./data/project1_1.png" alt="Single Cylinder Engine Design – SolidWorks CAD Model" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null;this.parentElement.innerHTML='&lt;div style=&quot;width:100%;height:100%;display:flex;align-items:center;justify-content:center;&quot;&gt;&lt;i class=&quot;fas fa-cogs fa-4x&quot; style=&quot;opacity:.2;&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/div&gt;'" />
+            <img src="./data/1/1- (1).jpg" alt="Project thumbnail: Gearbox Design & Analysis" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null;this.parentElement.innerHTML='&lt;div style=&quot;width:100%;height:100%;display:flex;align-items:center;justify-content:center;&quot;&gt;&lt;i class=&quot;fas fa-cogs fa-4x&quot; style=&quot;opacity:.2;&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/div&gt;'" />
             <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="background:rgba(7,11,20,0.85);">
-              <button type="button" class="omodal px-4 py-2 rounded-lg text-white text-xs font-semibold flex items-center gap-2" style="background:var(--accent);box-shadow:var(--shadow-glow);" data-image = "./data/project1_2.png" data-t="Gearbox Design & Analysis" data-d="Developed a detailed 3D gearbox assembly using SolidWorks, incorporating spur gears, transmission shafts, bearings, and a supporting housing. Focused on gear geometry, shaft alignment, component integration, and mechanical load transmission. Applied ANSYS Mechanical to investigate stress distribution, deformation, and structural behavior under representative operating loads."><i class="fas fa-expand" aria-hidden="true"></i> View Details</button>
+              <button type="button" class="omodal px-4 py-2 rounded-lg text-white text-xs font-semibold flex items-center gap-2" style="background:var(--accent);box-shadow:var(--shadow-glow);" data-image = "./data/1/1- (2).jpg|./data/1/1- (3).jpg|./data/1/1- (4).jpg|./data/1/1- (5).jpg|./data/1/1- (6).jpg|./data/1/1- (7).jpg|./data/1/1- (8).jpg|./data/1/1- (9).jpg|./data/1/1- (10).jpg" data-t="Gearbox Design & Analysis" data-d="Developed a detailed mechanical gearbox assembly using SolidWorks, focusing on gear arrangement, shaft positioning, bearing supports, and housing design.
+
+The project applies mechanical design principles to create a power transmission system while considering component alignment, assembly constraints, and structural integrity.
+
+ANSYS Mechanical and Finite Element Analysis (FEA) are used to investigate stress distribution, deformation, and load transfer under defined operating conditions. Particular attention is given to highly loaded regions and the structural behavior of gearbox components.
+
+Used Skills: SolidWorks, ANSYS Mechanical, FEA, mechanical design, 3D modeling, assembly design, structural analysis."><i class="fas fa-expand" aria-hidden="true"></i> View Details</button>
             </div>
           </div>
           <div style="padding:20px;">
@@ -431,9 +561,15 @@
 
         <div class="pcard reveal card-base overflow-hidden group" data-c="solidworks ansys assembly" style="padding:0;">
           <div class="relative h-44 overflow-hidden">
-            <img src="./data/project2_1.png" alt="Shock Absorber Assembly – FEA Analysis" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null;this.parentElement.innerHTML='&lt;div style=&quot;width:100%;height:100%;display:flex;align-items:center;justify-content:center;&quot;&gt;&lt;i class=&quot;fas fa-car-side fa-4x&quot; style=&quot;opacity:.2;&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/div&gt;'" />
+            <img src="./data/2/2- (1).jpg" alt="Project thumbnail: Wind Turbine Design & CFD Analysis" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null;this.parentElement.innerHTML='&lt;div style=&quot;width:100%;height:100%;display:flex;align-items:center;justify-content:center;&quot;&gt;&lt;i class=&quot;fas fa-car-side fa-4x&quot; style=&quot;opacity:.2;&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/div&gt;'" />
             <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="background:rgba(7,11,20,0.85);">
-              <button type="button" class="omodal px-4 py-2 rounded-lg text-white text-xs font-semibold flex items-center gap-2" style="background:var(--accent);box-shadow:var(--shadow-glow);" data-image="./data/project2_2.png" data-t="Wind Turbine Design & CFD Analysis" data-d="Designed a three-dimensional wind turbine using SolidWorks, focusing on rotor configuration, blade geometry, hub design, and aerodynamic characteristics. Used ANSYS Fluent to investigate airflow behavior around the turbine blades, including velocity distribution, pressure variations, streamline patterns, and downstream wake development."><i class="fas fa-expand" aria-hidden="true"></i> View Details</button>
+              <button type="button" class="omodal px-4 py-2 rounded-lg text-white text-xs font-semibold flex items-center gap-2" style="background:var(--accent);box-shadow:var(--shadow-glow);" data-image="./data/2/2- (2).jpg|./data/2/2- (3).jpg|./data/2/2- (4).jpg|./data/2/2- (5).jpg|./data/2/2- (6).jpg|./data/2/2- (7).jpg|./data/2/2- (8).jpg|./data/2/2- (9).jpg|./data/2/2- (10).jpg" data-t="Wind Turbine Design & CFD Analysis" data-d="Designed a wind turbine model using SolidWorks, focusing on blade geometry, rotor configuration, and mechanical component integration.
+
+The project investigates the aerodynamic interaction between incoming airflow and turbine blades using computational fluid dynamics principles.
+
+ANSYS Fluent is used to study velocity distribution, pressure variation, turbulence, and wake development around the turbine. Fluid mechanics principles help explain airflow behavior and the influence of turbine geometry on aerodynamic performance.
+
+Used Skills: SolidWorks, ANSYS Fluent, CFD, aerodynamics, fluid mechanics, 3D modeling, renewable energy engineering."><i class="fas fa-expand" aria-hidden="true"></i> View Details</button>
             </div>
           </div>
           <div style="padding:20px;"><p class="font-mono text-[10px] tracking-wider mb-1" style="color:var(--accent);">SolidWorks · ANSYS</p><h3 class="font-bold text-sm mb-2 leading-snug" style="color:var(--text-heading);">Wind Turbine Design & CFD Analysis</h3><p class="text-xs leading-relaxed mb-3" style="color:var(--text-muted);">Designed a wind turbine in SolidWorks and analyzed airflow using ANSYS Fluent CFD.</p><div class="flex flex-wrap gap-1.5"><span class="tag">SolidWorks</span><span class="tag">ANSYS</span><span class="tag">CFD</span><span class="tag">Aerodynamic Design</span><span class="tag">Fluid Mechanics</span></div></div>
@@ -441,9 +577,15 @@
 
         <div class="pcard reveal card-base overflow-hidden group" data-c="solidworks ansys" style="padding:0;">
           <div class="relative h-44 overflow-hidden">
-            <img src="./data/project3_1.jpg" alt="Autonomous Robot Design with Arduino Control" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null;this.parentElement.innerHTML='&lt;div style=&quot;width:100%;height:100%;display:flex;align-items:center;justify-content:center;&quot;&gt;&lt;i class=&quot;fas fa-robot fa-4x&quot; style=&quot;opacity:.2;&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/div&gt;'" />
+            <img src="./data/3/3- (1).jpg" alt="Project thumbnail: Solar Thermal Collector Design & Thermodynamic Simulation" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null;this.parentElement.innerHTML='&lt;div style=&quot;width:100%;height:100%;display:flex;align-items:center;justify-content:center;&quot;&gt;&lt;i class=&quot;fas fa-robot fa-4x&quot; style=&quot;opacity:.2;&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/div&gt;'" />
             <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="background:rgba(7,11,20,0.85);">
-              <button type="button" class="omodal px-4 py-2 rounded-lg text-white text-xs font-semibold flex items-center gap-2" style="background:var(--accent);box-shadow:var(--shadow-glow);" data-image="./data/project3_2.jpg" data-t="Solar Thermal Collector Design & Thermodynamic Simulation" data-d="Developed a 3D solar thermal collector model using SolidWorks, incorporating collector tubes, connecting manifolds, fluid passages, and structural supports. Used ANSYS Fluent to investigate fluid circulation, temperature distribution, and heat transfer between the working fluid and heated collector surfaces, exploring thermal behavior in renewable energy applications."><i class="fas fa-expand" aria-hidden="true"></i> View Details</button>
+              <button type="button" class="omodal px-4 py-2 rounded-lg text-white text-xs font-semibold flex items-center gap-2" style="background:var(--accent);box-shadow:var(--shadow-glow);" data-image="./data/3/3- (2).jpg|./data/3/3- (3).jpg|./data/3/3- (4).jpg|./data/3/3- (5).jpg|./data/3/3- (6).jpg" data-t="Solar Thermal Collector Design & Thermodynamic Simulation" data-d="Designed a solar thermal collector system using SolidWorks, incorporating the absorber surface, fluid passages, enclosure, and supporting mechanical components.
+
+The project focuses on converting solar energy into useful thermal energy through heat absorption and transfer to a working fluid.
+
+Thermodynamic and heat-transfer principles are applied to investigate conduction through solid components and convection between the absorber and flowing fluid. ANSYS Fluent can be used to examine temperature distribution, fluid velocity, and thermal behavior under defined operating conditions.
+
+Used Skills: SolidWorks, ANSYS Fluent, CFD, thermodynamics, heat transfer, thermal analysis, mechanical design."><i class="fas fa-expand" aria-hidden="true"></i> View Details</button>
             </div>
           </div>
           <div style="padding:20px;"><p class="font-mono text-[10px] tracking-wider mb-1" style="color:var(--accent);">SolidWorks · Arduino</p><h3 class="font-bold text-sm mb-2 leading-snug" style="color:var(--text-heading);">Solar Thermal Collector Design & Thermodynamic Simulation</h3><p class="text-xs leading-relaxed mb-3" style="color:var(--text-muted);">Designed a solar thermal collector and evaluated heat transfer using ANSYS Fluent.</p><div class="flex flex-wrap gap-1.5"><span class="tag">SolidWorks</span><span class="tag">ANSYS Fluent</span><span class="tag">CFD</span><span class="tag">Heat Transfer</span><span class="tag">Thermodynamics</span></div></div>
@@ -451,33 +593,57 @@
 
         <div class="pcard reveal card-base overflow-hidden group" data-c="solidworks assembly ansys arduino" style="padding:0;">
           <div class="relative h-44 overflow-hidden">
-            <img src="./data/project4_1.png" alt="Alloy Wheel and Tyre Design – 3D CAD" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null;this.parentElement.innerHTML='&lt;div style=&quot;width:100%;height:100%;display:flex;align-items:center;justify-content:center;&quot;&gt;&lt;i class=&quot;fas fa-circle fa-4x&quot; style=&quot;opacity:.2;&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/div&gt;'" />
-            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="background:rgba(7,11,20,0.85);"><button type="button" class="omodal px-4 py-2 rounded-lg text-white text-xs font-semibold flex items-center gap-2" style="background:var(--accent);box-shadow:var(--shadow-glow);" data-t="EV Battery Cooling System Design & Thermal Analysis" data-d="Designed a liquid-cooled battery thermal management system using SolidWorks, incorporating battery modules, cooling plates, coolant channels, and inlet and outlet connections. Used ANSYS Fluent to investigate coolant flow distribution, heat transfer, pressure variations, and temperature distribution throughout the cooling system." data-image="./data/project4_2.png"><i class="fas fa-expand" aria-hidden="true"></i> View Details</button></div>
+            <img src="./data/4/4- (1).jpg" alt="Project thumbnail: EV Battery Cooling System Design & Thermal Analysis" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null;this.parentElement.innerHTML='&lt;div style=&quot;width:100%;height:100%;display:flex;align-items:center;justify-content:center;&quot;&gt;&lt;i class=&quot;fas fa-circle fa-4x&quot; style=&quot;opacity:.2;&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/div&gt;'" />
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="background:rgba(7,11,20,0.85);"><button type="button" class="omodal px-4 py-2 rounded-lg text-white text-xs font-semibold flex items-center gap-2" style="background:var(--accent);box-shadow:var(--shadow-glow);" data-t="EV Battery Cooling System Design & Thermal Analysis" data-d="Developed an electric vehicle battery cooling-system concept using SolidWorks, focusing on battery-pack arrangement, cooling-channel geometry, and mechanical integration.
+
+The project addresses the importance of maintaining suitable battery operating temperatures and minimizing temperature differences between individual cells.
+
+ANSYS Fluent is used to investigate coolant flow behavior and thermal interaction within the cooling system, including temperature distribution, flow velocity, and pressure drop. Heat-transfer principles help evaluate how thermal energy moves from battery surfaces into the cooling medium.
+
+Used Skills: SolidWorks, ANSYS Fluent, CFD, thermal analysis, heat transfer, fluid mechanics, EV battery cooling design." data-image="./data/4/4- (2).jpg|./data/4/4- (3).jpg|./data/4/4- (4).jpg|./data/4/4- (5).jpg|./data/4/4- (6).jpg|./data/4/4- (7).jpg|./data/4/4- (8).jpg|./data/4/4- (9).jpg|./data/4/4- (10).jpg|./data/4/4- (11).jpg|./data/4/4- (12).jpg|./data/4/4- (13).jpg|./data/4/4- (14).jpg|./data/4/4- (15).jpg|./data/4/4- (16).jpg"><i class="fas fa-expand" aria-hidden="true"></i> View Details</button></div>
           </div>
           <div style="padding:20px;"><p class="font-mono text-[10px] tracking-wider mb-1" style="color:var(--accent);">SolidWorks</p><h3 class="font-bold text-sm mb-2 leading-snug" style="color:var(--text-heading);">EV Battery Cooling System Design & Thermal Analysis</h3><p class="text-xs leading-relaxed mb-3" style="color:var(--text-muted);">Designed an EV battery cooling system and evaluated thermal performance using ANSYS Fluent.</p><div class="flex flex-wrap gap-1.5"><span class="tag">SolidWorks</span><span class="tag">SANSYS Fluent</span><span class="tag">Heat Transfer</span></div></div>
         </div>
 
         <div class="pcard reveal card-base overflow-hidden group" data-c="solidworks ansys" style="padding:0;">
           <div class="relative h-44 overflow-hidden">
-            <img src="./data/project5_1.jpg" alt="Jaw Crusher Machine Design – Kinematic Analysis" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null;this.parentElement.innerHTML='&lt;div style=&quot;width:100%;height:100%;display:flex;align-items:center;justify-content:center;&quot;&gt;&lt;i class=&quot;fas fa-hammer fa-4x&quot; style=&quot;opacity:.2;&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/div&gt;'" />
-            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="background:rgba(7,11,20,0.85);"><button type="button" class="omodal px-4 py-2 rounded-lg text-white text-xs font-semibold flex items-center gap-2" style="background:var(--accent);box-shadow:var(--shadow-glow);" data-t="Hydrogen Fuel Cell Stack Design & CFD Analysis" data-d="Developed a conceptual PEM hydrogen fuel cell stack using SolidWorks, incorporating bipolar plates, gas flow channels, end plates, and supporting components. Used ANSYS Fluent to investigate gas distribution, pressure variations, flow uniformity, and thermal behavior within the modeled channels, exploring the engineering principles of clean hydrogen energy systems." data-image="./data/project5_2.jpg"><i class="fas fa-expand" aria-hidden="true"></i> View Details</button></div>
+            <img src="./data/5/5- (1).jpg" alt="Project thumbnail: Hydrogen Fuel Cell Stack Design & CFD Analysis" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null;this.parentElement.innerHTML='&lt;div style=&quot;width:100%;height:100%;display:flex;align-items:center;justify-content:center;&quot;&gt;&lt;i class=&quot;fas fa-hammer fa-4x&quot; style=&quot;opacity:.2;&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/div&gt;'" />
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="background:rgba(7,11,20,0.85);"><button type="button" class="omodal px-4 py-2 rounded-lg text-white text-xs font-semibold flex items-center gap-2" style="background:var(--accent);box-shadow:var(--shadow-glow);" data-t="Hydrogen Fuel Cell Stack Design & CFD Analysis" data-d="Developed a conceptual hydrogen fuel cell stack using SolidWorks, focusing on component arrangement, mechanical structure, and reactant flow-channel geometry.
+
+The project explores fuel cell operating principles, in which hydrogen and oxygen participate in electrochemical reactions to generate electrical energy.
+
+CFD analysis using ANSYS Fluent is applied to investigate gas-flow distribution, velocity variation, and pressure behavior within the flow channels. The design also considers uniform reactant distribution and effective thermal management.
+
+Used Skills: SolidWorks, ANSYS Fluent, CFD, fluid mechanics, thermal engineering, 3D modeling, mechanical design." data-image="./data/5/5- (2).jpg|./data/5/5- (3).jpg|./data/5/5- (4).jpg|./data/5/5- (5).jpg|./data/5/5- (6).jpg|./data/5/5- (7).jpg|./data/5/5- (8).jpg|./data/5/5- (9).jpg"><i class="fas fa-expand" aria-hidden="true"></i> View Details</button></div>
           </div>
           <div style="padding:20px;"><p class="font-mono text-[10px] tracking-wider mb-1" style="color:var(--accent);">SolidWorks · ANSYS</p><h3 class="font-bold text-sm mb-2 leading-snug" style="color:var(--text-heading);">Hydrogen Fuel Cell Stack Design & CFD Analysis</h3><p class="text-xs leading-relaxed mb-3" style="color:var(--text-muted);">Designed a hydrogen fuel cell stack and investigated fluid flow and thermal behavior using ANSYS Fluent.</p><div class="flex flex-wrap gap-1.5"><span class="tag">SolidWorks</span><span class="tag">ANSYS</span><span class="tag">Fluid Mechanics</span><span class="tag">Thermal Analysis</span></div></div>
         </div>
 
         <div class="pcard reveal card-base overflow-hidden group" data-c="solidworks assembly ansys" style="padding:0;">
           <div class="relative h-44 overflow-hidden">
-            <img src="./data/project6_2.jpg" alt="Full-Scale Jeep Design – SolidWorks Large Assembly" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null;this.parentElement.innerHTML='&lt;div style=&quot;width:100%;height:100%;display:flex;align-items:center;justify-content:center;&quot;&gt;&lt;i class=&quot;fas fa-truck-pickup fa-4x&quot; style=&quot;opacity:.2;&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/div&gt;'" />
-            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="background:rgba(7,11,20,0.85);"><button type="button" class="omodal px-4 py-2 rounded-lg text-white text-xs font-semibold flex items-center gap-2" style="background:var(--accent);box-shadow:var(--shadow-glow);" data-t="Energy-Efficient Heat Pump Design & Thermal Analysis" data-d="Developed a 3D air-source heat pump assembly using SolidWorks, incorporating the compressor, evaporator, condenser, refrigerant piping, and supporting enclosure. Used ANSYS Fluent to investigate airflow distribution, temperature variations, and heat transfer around heat exchanger surfaces, focusing on energy-efficient heating and cooling technologies." data-image="./data/project6_1.jpg"><i class="fas fa-expand" aria-hidden="true"></i> View Details</button></div>
+            <img src="./data/6/6- (1).jpg" alt="Project thumbnail: Energy-Efficient Heat Pump Design & Thermal Analysis" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null;this.parentElement.innerHTML='&lt;div style=&quot;width:100%;height:100%;display:flex;align-items:center;justify-content:center;&quot;&gt;&lt;i class=&quot;fas fa-truck-pickup fa-4x&quot; style=&quot;opacity:.2;&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/div&gt;'" />
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="background:rgba(7,11,20,0.85);"><button type="button" class="omodal px-4 py-2 rounded-lg text-white text-xs font-semibold flex items-center gap-2" style="background:var(--accent);box-shadow:var(--shadow-glow);" data-t="Energy-Efficient Heat Pump Design & Thermal Analysis" data-d="Designed a heat pump system concept using SolidWorks, incorporating major components such as the evaporator, condenser, compressor, expansion device, and refrigerant connections.
+
+The project focuses on the vapor-compression refrigeration cycle and the transfer of thermal energy between different environments.
+
+Thermodynamic principles are applied to understand the relationship between pressure, temperature, and heat transfer throughout the cycle. Thermal analysis and CFD methods can be used to investigate heat-exchanger behavior, airflow distribution, and temperature variations.
+
+Used Skills: SolidWorks, ANSYS Fluent, CFD, thermodynamics, heat transfer, thermal analysis, HVAC system design." data-image="./data/6/6- (2).jpg|./data/6/6- (3).jpg|./data/6/6- (4).jpg|./data/6/6- (5).jpg|./data/6/6- (6).jpg|./data/6/6- (7).jpg"><i class="fas fa-expand" aria-hidden="true"></i> View Details</button></div>
           </div>
           <div style="padding:20px;"><p class="font-mono text-[10px] tracking-wider mb-1" style="color:var(--accent);">SolidWorks</p><h3 class="font-bold text-sm mb-2 leading-snug" style="color:var(--text-heading);">Energy-Efficient Heat Pump Design & Thermal Analysis</h3><p class="text-xs leading-relaxed mb-3" style="color:var(--text-muted);">Designed an energy-efficient heat pump and evaluated thermal performance using ANSYS Fluent.</p><div class="flex flex-wrap gap-1.5"><span class="tag">SolidWorks</span><span class="tag">ANSYS Fluent</span><span class="tag">Heat Transfer</span></div></div>
         </div>
 
         <div class="pcard reveal card-base overflow-hidden group" data-c="solidworks assembly arduino" style="padding:0;">
           <div class="relative h-44 overflow-hidden">
-            <img src="./data/project7_1.jpg" alt="Heavy-Duty Wheel Loader Design with Hydraulics" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null;this.parentElement.innerHTML='&lt;div style=&quot;width:100%;height:100%;display:flex;align-items:center;justify-content:center;&quot;&gt;&lt;i class=&quot;fas fa-tractor fa-4x&quot; style=&quot;opacity:.2;&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/div&gt;'" />
+            <img src="./data/7/7- (1).jpg" alt="Project thumbnail: Industrial Robotic Arm Design & Assembly" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null;this.parentElement.innerHTML='&lt;div style=&quot;width:100%;height:100%;display:flex;align-items:center;justify-content:center;&quot;&gt;&lt;i class=&quot;fas fa-tractor fa-4x&quot; style=&quot;opacity:.2;&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/div&gt;'" />
             <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="background:rgba(7,11,20,0.85);">
-              <button type="button" class="omodal px-4 py-2 rounded-lg text-white text-xs font-semibold flex items-center gap-2" style="background:var(--accent);box-shadow:var(--shadow-glow);" data-t="Industrial Robotic Arm Design & Assembly" data-d="Designed a six-axis industrial robotic arm using SolidWorks, incorporating articulated links, rotational joints, motor mounting interfaces, transmission components, and an end-effector mounting arrangement. Focused on parametric modeling, mechanical assembly integration, joint configurations, and motion studies to evaluate movement, workspace, and potential component interference." data-image="./data/project7_2.jpg"><i class="fas fa-expand" aria-hidden="true"></i> View Details</button>
+              <button type="button" class="omodal px-4 py-2 rounded-lg text-white text-xs font-semibold flex items-center gap-2" style="background:var(--accent);box-shadow:var(--shadow-glow);" data-t="Industrial Robotic Arm Design & Assembly" data-d="Designed and assembled a multi-joint industrial robotic arm using SolidWorks, including structural links, joint housings, mounting components, and an end-effector interface.
+
+The project focuses on mechanical component development, assembly constraints, joint configuration, and the relationship between link geometry and robotic movement.
+
+Kinematic principles are considered to understand joint motion and end-effector positioning within the working space. ANSYS Mechanical can also be applied to evaluate stress and deformation under defined loading conditions.
+
+Used Skills: SolidWorks, ANSYS Mechanical, FEA, mechanical assembly, 3D modeling, robotics fundamentals, kinematic analysis." data-image="./data/7/7- (2).jpg|./data/7/7- (3).jpg|./data/7/7- (4).jpg|./data/7/7- (5).jpg|./data/7/7- (6).jpg|./data/7/7- (7).jpg|./data/7/7- (8).jpg"><i class="fas fa-expand" aria-hidden="true"></i> View Details</button>
             </div>
           </div>
           <div style="padding:20px;"><p class="font-mono text-[10px] tracking-wider mb-1" style="color:var(--accent);">SolidWorks · Assembly</p><h3 class="font-bold text-sm mb-2 leading-snug" style="color:var(--text-heading);">Industrial Robotic Arm Design & Assembly</h3><p class="text-xs leading-relaxed mb-3" style="color:var(--text-muted);">Designed a six-axis industrial robotic arm using SolidWorks, focusing on mechanical components and assembly.</p><div class="flex flex-wrap gap-1.5"><span class="tag">SolidWorks</span><span class="tag">Large Assembly</span><span class="tag">Kinematic Analysis</span><span class="tag">Motion Study</span></div></div>
@@ -485,9 +651,15 @@
 
         <div class="pcard reveal card-base overflow-hidden group" data-c="arduino solidworks assembly" style="padding:0;">
           <div class="relative h-44 overflow-hidden">
-            <img src="./data/project8_1.jpg" alt="Arduino Engineering Project – Seed Sowing Robot" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null;this.parentElement.innerHTML='&lt;div style=&quot;width:100%;height:100%;display:flex;align-items:center;justify-content:center;&quot;&gt;&lt;i class=&quot;fas fa-microchip fa-4x&quot; style=&quot;opacity:.2;&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/div&gt;'" />
+            <img src="./data/8/8- (1).jpg" alt="Project thumbnail: Smart Autonomous Mini Robot Design" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null;this.parentElement.innerHTML='&lt;div style=&quot;width:100%;height:100%;display:flex;align-items:center;justify-content:center;&quot;&gt;&lt;i class=&quot;fas fa-microchip fa-4x&quot; style=&quot;opacity:.2;&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/div&gt;'" />
             <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="background:rgba(7,11,20,0.85);">
-              <button type="button" class="omodal px-4 py-2 rounded-lg text-white text-xs font-semibold flex items-center gap-2" style="background:var(--accent);box-shadow:var(--shadow-glow);" data-t="Smart Autonomous Mini Robot Design" data-d="Designed and developed a compact autonomous mobile robot integrating mechanical engineering, embedded electronics, and wireless communication. Modeled the chassis, motor mounts, wheel assemblies, sensor brackets, and electronics enclosure using SolidWorks. Programmed an ESP32 microcontroller through the Arduino IDE using C/C++ to process sensor inputs, control motor movement, detect obstacles, and support Bluetooth or Wi-Fi communication." data-image="./data/project8_2.jpg"><i class="fas fa-expand" aria-hidden="true"></i> View Details</button>
+              <button type="button" class="omodal px-4 py-2 rounded-lg text-white text-xs font-semibold flex items-center gap-2" style="background:var(--accent);box-shadow:var(--shadow-glow);" data-t="Smart Autonomous Mini Robot Design" data-d="Developed a smart mobile robot concept integrating mechanical design, electronic hardware, and embedded control systems.
+
+SolidWorks is used to design the chassis, wheel arrangement, motor mounts, and sensor installation points, with attention to component positioning and mechanical integration.
+
+The electronic system incorporates microcontroller-based control using ESP32 or Arduino platforms. C/C++ programming supports sensor data processing and motor control, while PCB design and Bluetooth or Wi-Fi connectivity support hardware integration and wireless communication.
+
+Used Skills: SolidWorks, PCB design, electronic circuit design, ESP32, Arduino IDE, C/C++, sensor integration, motor control, Bluetooth, Wi-Fi, IoT." data-image="./data/8/8- (2).jpg|./data/8/8- (3).jpg|./data/8/8- (4).jpg|./data/8/8- (5).jpg|./data/8/8- (6).jpg|./data/8/8- (7).jpg|./data/8/8- (8).jpg|./data/8/8- (9).jpg|./data/8/8- (10).jpg|./data/8/8- (11).jpg|./data/8/8- (12).jpg"><i class="fas fa-expand" aria-hidden="true"></i> View Details</button>
             </div>
           </div>
           <div style="padding:20px;"><p class="font-mono text-[10px] tracking-wider mb-1" style="color:var(--accent);">Arduino</p><h3 class="font-bold text-sm mb-2 leading-snug" style="color:var(--text-heading);">Smart Autonomous Mini Robot Design</h3><p class="text-xs leading-relaxed mb-3" style="color:var(--text-muted);">Designed an ESP32-powered autonomous robot integrating mechanical CAD, embedded programming, and smart control.</p><div class="flex flex-wrap gap-1.5"><span class="tag">SolidWorks</span><span class="tag">Arduino</span><span class="tag">ESP32</span><span class="tag">C++</span><span class="tag">Motor Control</span></div></div>
@@ -499,13 +671,15 @@
   <div id="pmodal" class="closed fixed inset-0 z-[2000] flex items-center justify-center p-4" style="background:var(--bg-overlay);" role="dialog" aria-modal="true" aria-labelledby="mTitle" aria-hidden="true">
     <div class="mi relative rounded-2xl max-w-4xl w-full overflow-hidden border" style="background:var(--bg-modal);border-color:var(--border-default);box-shadow:var(--shadow-glow-lg);">
       <button type="button" id="cmodal" class="absolute top-3 right-3 z-10 w-8 h-8 rounded-full flex items-center justify-center transition-all text-sm" style="background:var(--border-default);color:var(--text-secondary);" aria-label="Close project details"><i class="fas fa-xmark" aria-hidden="true"></i></button>
-      <div class="project-modal-image">
-        <img
-          id="mImage"
-          src=""
-          alt="Project preview"
-          style="display:none;"
-        >
+      <div class="project-gallery">
+          <button id="galleryPrev" type="button">❮</button>
+
+          <img id="mImage" src="" alt="Project image">
+
+          <button id="galleryNext" type="button">❯</button>
+
+          <div id="galleryCounter"></div>
+          <div id="galleryThumbs"></div>
       </div>
       <div class="p-6">
         <h3 id="mTitle" class="text-lg font-bold mb-3" style="color:var(--text-heading);"></h3>
@@ -548,7 +722,7 @@
     </div>
   </section> -->
 
-  <section id="timeline" class="py-20 lg:py-32" style="background:var(--bg-secondary);">
+  <!-- <section id="timeline" class="py-20 lg:py-32" style="background:var(--bg-secondary);">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16 reveal"><h2 class="font-display text-5xl lg:text-6xl tracking-wider" style="color:var(--text-heading);">Engineering Journey</h2><div class="section-accent-line"></div></div>
       <div class="relative tl-wrap max-w-3xl mx-auto">
@@ -562,15 +736,15 @@
         <div class="reveal flex justify-start pl-[calc(50%+2rem)] mb-8 relative"><div class="absolute left-1/2 -translate-x-1/2 top-5 w-9 h-9 rounded-full border-2 flex items-center justify-center text-xs z-10 transition-all" style="background:var(--bg-secondary);border-color:var(--accent2);color:var(--accent2);"><i class="fas fa-rocket text-[10px]" aria-hidden="true"></i></div><div class="max-w-xs w-full p-5 rounded-xl border transition-all" style="border-color:var(--accent2);background:var(--bg-card);"><p class="font-mono text-[10px] tracking-wider mb-1" style="color:var(--accent2-light);">Year 3 — 2017</p><h3 class="font-bold text-sm mb-2" style="color:var(--text-heading);">SmartAutonomous MiniRobot</h3><p class="text-xs leading-relaxed mb-3" style="color:var(--text-muted);">Developed a compact autonomous mobile robot</p><div class="flex flex-wrap gap-1"><span class="tag">Arduino projects</span><span class="tag">Robotics</span><span class="tag">SolidWorks</span></div></div></div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <section id="counters" class="py-16 border-y" style="background:var(--bg-primary);border-color:var(--border-default);">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-0">
-        <div class="relative flex flex-col items-center py-10 px-4 text-center group"><i class="fas fa-folder-open text-2xl mb-3 opacity-40 group-hover:opacity-100" style="color:var(--accent);" aria-hidden="true"></i><span class="ctr font-display text-5xl lg:text-6xl tracking-wider leading-none" style="color:var(--accent-light);" data-target="15">0</span><span class="text-sm mt-2" style="color:var(--text-muted);">Projects Completed</span></div>
-        <div class="relative flex flex-col items-center py-10 px-4 text-center group"><i class="fas fa-certificate text-2xl mb-3 opacity-40 group-hover:opacity-100" style="color:var(--accent);" aria-hidden="true"></i><span class="ctr font-display text-5xl lg:text-6xl tracking-wider leading-none" style="color:var(--accent-light);" data-target="22">0</span><span class="text-sm mt-2" style="color:var(--text-muted);">Certifications Earned</span></div>
-        <div class="relative flex flex-col items-center py-10 px-4 text-center group"><i class="fas fa-clock text-2xl mb-3 opacity-40 group-hover:opacity-100" style="color:var(--accent);" aria-hidden="true"></i><span class="ctr font-display text-5xl lg:text-6xl tracking-wider leading-none" style="color:var(--accent-light);" data-target="500">0</span><span class="text-sm mt-2" style="color:var(--text-muted);">CAD Hours Practiced</span></div>
-        <div class="relative flex flex-col items-center py-10 px-4 text-center group"><i class="fas fa-wave-square text-2xl mb-3 opacity-40 group-hover:opacity-100" style="color:var(--accent);" aria-hidden="true"></i><span class="ctr font-display text-5xl lg:text-6xl tracking-wider leading-none" style="color:var(--accent-light);" data-target="30">0</span><span class="text-sm mt-2" style="color:var(--text-muted);">Simulations Completed</span></div>
+        <div class="relative flex flex-col items-center py-10 px-4 text-center group"><i class="fas fa-folder-open text-2xl mb-3 opacity-40 group-hover:opacity-100" style="color:var(--accent);" aria-hidden="true"></i><span class="ctr font-display text-5xl lg:text-6xl tracking-wider leading-none" style="color:var(--accent-light);" data-target="8">0</span><span class="text-sm mt-2" style="color:var(--text-muted);">Featured Portfolio Projects</span></div>
+        <div class="relative flex flex-col items-center py-10 px-4 text-center group"><i class="fas fa-certificate text-2xl mb-3 opacity-40 group-hover:opacity-100" style="color:var(--accent);" aria-hidden="true"></i><span class="ctr font-display text-5xl lg:text-6xl tracking-wider leading-none" style="color:var(--accent-light);" data-target="23">0</span><span class="text-sm mt-2" style="color:var(--text-muted);">Certificates Listed</span></div>
+        <div class="relative flex flex-col items-center py-10 px-4 text-center group"><i class="fas fa-clock text-2xl mb-3 opacity-40 group-hover:opacity-100" style="color:var(--accent);" aria-hidden="true"></i><span class="ctr font-display text-5xl lg:text-6xl tracking-wider leading-none" style="color:var(--accent-light);" data-target="5">0</span><span class="text-sm mt-2" style="color:var(--text-muted);">Core CAD / CAE Tools</span></div>
+        <div class="relative flex flex-col items-center py-10 px-4 text-center group"><i class="fas fa-wave-square text-2xl mb-3 opacity-40 group-hover:opacity-100" style="color:var(--accent);" aria-hidden="true"></i><span class="ctr font-display text-5xl lg:text-6xl tracking-wider leading-none" style="color:var(--accent-light);" data-target="2">0</span><span class="text-sm mt-2" style="color:var(--text-muted);">Additional Design Areas</span></div>
       </div>
     </div>
   </section>
@@ -891,18 +1065,86 @@
       document.querySelectorAll('.omodal').forEach(function (btn) {
         btn.addEventListener('click', function () {
           var imageEl = document.getElementById('mImage');
-          var imageUrl = btn.dataset.image;
+          var thumbs = document.getElementById('galleryThumbs');
+          var counter = document.getElementById('galleryCounter');
+          var prevBtn = document.getElementById('galleryPrev');
+          var nextBtn = document.getElementById('galleryNext');
 
-          if (imageEl) {
-              if (imageUrl) {
-                  imageEl.src = imageUrl;
-                  imageEl.style.display = 'block';
-              } else {
-                  imageEl.style.display = 'none';
-            }
+          // Use the visible project-card image as a reliable first image,
+          // then add any extra paths listed in data-image or data-images.
+          var cardImage = btn.closest('.pcard') && btn.closest('.pcard').querySelector('img');
+          var cardImagePath = cardImage ? cardImage.getAttribute('src') : '';
+          var listedPaths = (btn.dataset.images || btn.dataset.image || '')
+            .split('|')
+            .map(function (path) { return path.trim(); })
+            .filter(Boolean);
+
+          var imagePaths = [];
+          [cardImagePath].concat(listedPaths).forEach(function (path) {
+            if (path && imagePaths.indexOf(path) === -1) imagePaths.push(path);
+          });
+
+          var currentImage = 0;
+          var failedPaths = [];
+
+          function renderThumbnails() {
+            if (!thumbs) return;
+            thumbs.innerHTML = '';
+            imagePaths.forEach(function (path, index) {
+              var thumb = document.createElement('button');
+              thumb.type = 'button';
+              thumb.className = 'gallery-thumb' + (index === currentImage ? ' active' : '');
+              thumb.setAttribute('aria-label', 'Show project image ' + (index + 1));
+              var thumbImg = document.createElement('img');
+              thumbImg.src = path;
+              thumbImg.alt = '';
+              thumbImg.onerror = function () { thumb.style.display = 'none'; };
+              thumb.appendChild(thumbImg);
+              thumb.addEventListener('click', function () { showImage(index); });
+              thumbs.appendChild(thumb);
+            });
           }
+
+          function showImage(index) {
+            if (!imagePaths.length || !imageEl) {
+              if (imageEl) imageEl.style.display = 'none';
+              if (counter) counter.textContent = 'No project images found';
+              return;
+            }
+
+            currentImage = (index + imagePaths.length) % imagePaths.length;
+            imageEl.style.display = 'block';
+            imageEl.onerror = function () {
+              failedPaths.push(imagePaths[currentImage]);
+              imagePaths.splice(currentImage, 1);
+              if (imagePaths.length) {
+                currentImage = currentImage % imagePaths.length;
+                showImage(currentImage);
+              } else {
+                imageEl.style.display = 'none';
+                if (counter) counter.textContent = 'Project images could not be loaded';
+                if (thumbs) thumbs.innerHTML = '';
+                if (prevBtn) prevBtn.style.display = 'none';
+                if (nextBtn) nextBtn.style.display = 'none';
+              }
+            };
+            imageEl.src = imagePaths[currentImage];
+            imageEl.alt = (btn.dataset.t || 'Project') + ' — image ' + (currentImage + 1);
+            if (counter) counter.textContent = (currentImage + 1) + ' / ' + imagePaths.length;
+            if (prevBtn) prevBtn.style.display = imagePaths.length > 1 ? 'block' : 'none';
+            if (nextBtn) nextBtn.style.display = imagePaths.length > 1 ? 'block' : 'none';
+            renderThumbnails();
+          }
+
+          if (prevBtn) prevBtn.onclick = function () { showImage(currentImage - 1); };
+          if (nextBtn) nextBtn.onclick = function () { showImage(currentImage + 1); };
+          showImage(0);
           if (titleEl) titleEl.textContent = btn.dataset.t || '';
-          if (descEl) descEl.textContent = btn.dataset.d || '';
+          if (descEl) {
+            var descriptionText = btn.dataset.d || '';
+            descriptionText = descriptionText.replace(/([A-Za-z])\\r?\\n[ \\t]*([a-z])/g, '$1$2');
+            descEl.textContent = descriptionText;
+          }
           if (skillsEl) {
             skillsEl.innerHTML = (btn.dataset.s || '').split(',').filter(Boolean)
               .map(function (s) { return '<span class="tag">' + s.trim() + '</span>'; }).join('');
