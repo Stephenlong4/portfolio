@@ -256,6 +256,24 @@
     height: 240px;
   }
 }
+
+
+    /* Contact section only: center the form without affecting other sections */
+    #contact {
+      display: block;
+    }
+    #contact > .max-w-7xl > .grid {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    #contact #cForm {
+      width: 100%;
+      max-width: 760px;
+      flex: 0 1 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
   </style>
 </head>
 
@@ -272,6 +290,7 @@
   <nav id="navbar" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
+        <a href="#hero" class="font-display text-2xl tracking-widest no-underline" style="color:var(--text-heading);"><span style="color:var(--accent);"></span><span style="color:var(--accent);"></span></a>
         <ul class="hidden lg:flex items-center gap-1">
           <li><a href="#about" class="nav-link px-3 py-1.5 rounded-md text-sm font-medium transition-all" style="color:var(--text-secondary);">About</a></li>
           <li><a href="#skills" class="nav-link px-3 py-1.5 rounded-md text-sm font-medium transition-all" style="color:var(--text-secondary);">Skills</a></li>
@@ -610,12 +629,12 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16 reveal"><h2 class="font-display text-5xl lg:text-6xl tracking-wider" style="color:var(--text-heading);">Get In Touch</h2><div class="section-accent-line"></div></div>
       <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
-        <div class="lg:col-span-2 reveal space-y-4">
-          <p class="leading-relaxed mb-6" style="color:var(--text-secondary);">Open to internship opportunities, collaborations, and engineering discussions. Let's connect!</p>
+        <!-- <div class="lg:col-span-2 reveal space-y-4">
+          <p class="leading-relaxed mb-6" style="color:var(--text-secondary);">Open to collaborations, and engineering discussions. Let's connect!</p>
           <a href="https://mail.google.com/mail/?view=cm&fs=1&to=stephenlongjr4@gmail.com" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-4 p-4 rounded-xl border transition-all card-base"><div class="w-11 h-11 rounded-lg flex items-center justify-center text-lg flex-shrink-0" style="background:var(--accent-subtle);color:var(--accent);"><i class="fas fa-envelope" aria-hidden="true"></i></div><div><p class="text-[10px] font-mono tracking-widest" style="color:var(--text-muted);">EMAIL (Opens Gmail)</p><p class="text-sm font-medium" style="color:var(--text-heading);">stephenlongjr4@gmail.com</p></div></a>
           <a href="https://github.com/Power-Howdy" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-4 p-4 rounded-xl border transition-all card-base"><div class="w-11 h-11 rounded-lg flex items-center justify-center text-lg flex-shrink-0" style="background:var(--accent-subtle);color:var(--accent);"><i class="fab fa-github" aria-hidden="true"></i></div><div><p class="text-[10px] font-mono tracking-widest" style="color:var(--text-muted);">GITHUB</p><p class="text-sm font-medium" style="color:var(--text-heading);">https://github.com/Power-Howdy</p></div></a>
           <a href="https://wa.me" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-4 p-4 rounded-xl border transition-all card-base"><div class="w-11 h-11 rounded-lg flex items-center justify-center text-lg flex-shrink-0" style="background:var(--accent-subtle);color:var(--accent);"><i class="fab fa-whatsapp" aria-hidden="true"></i></div><div><p class="text-[10px] font-mono tracking-widest" style="color:var(--text-muted);">WHATSAPP</p><p class="text-sm font-medium" style="color:var(--text-heading);">+267 257 5733</p></div></a>
-        </div>
+        </div> -->
         <form id="cForm" class="lg:col-span-3 reveal space-y-4" novalidate>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div class="flex flex-col gap-1.5">
@@ -646,13 +665,14 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
         <div class="sm:col-span-2">
-          <span class="font-display text-2xl tracking-widest block mb-3" style="color:var(--text-heading);"><span style="color:var(--accent);">[</span>Stephen Long<span style="color:var(--accent);">]</span></span>
+          <span class="font-display text-2xl tracking-widest block mb-3" style="color:var(--text-heading);"><span style="color:var(--accent);"></span>Stephen Long<span style="color:var(--accent);"></span></span>
           <p class="text-sm leading-relaxed max-w-xs mb-5" style="color:var(--text-muted);">Mechanical Engineer passionate about CAD design, simulation, and engineering innovation.</p>
           <div class="flex gap-3">
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=stephenlongjr4@gmail.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full border flex items-center justify-center text-sm transition-all" style="border-color:var(--border-default);color:var(--text-muted);" title="Open Gmail to Compose Email" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+            stephenlongjr4@gmail.com
+            <!-- <a href="https://mail.google.com/mail/?view=cm&fs=1&to=stephenlongjr4@gmail.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full border flex items-center justify-center text-sm transition-all" style="border-color:var(--border-default);color:var(--text-muted);" title="Open Gmail to Compose Email" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
             <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full border flex items-center justify-center text-sm transition-all" style="border-color:var(--border-default);color:var(--text-muted);" title="LinkedIn Profile" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
             <a href="https://github.com/Power-Howdy" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full border flex items-center justify-center text-sm transition-all" style="border-color:var(--border-default);color:var(--text-muted);" title="GitHub Profile" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
-            <a href="https://wa.me" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full border flex items-center justify-center text-sm transition-all" style="border-color:var(--border-default);color:var(--text-muted);" title="WhatsApp Chat" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+            <a href="https://wa.me" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full border flex items-center justify-center text-sm transition-all" style="border-color:var(--border-default);color:var(--text-muted);" title="WhatsApp Chat" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a> -->
           </div>
         </div>
         <div>
